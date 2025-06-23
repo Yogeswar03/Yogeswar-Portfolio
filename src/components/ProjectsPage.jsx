@@ -70,7 +70,7 @@ function ProjectsPage() {
   };
 
   return (
-    <section id='project'>
+    <section id='projects'>
       
         <nav  className='w-full h-[8vh] padding-x fixed z-[999] top-0 left-0 backdrop-blur-[7px] flex items-center justify-between font-light font-["Neue_Montreal"]'>
            <div className='logo w-[50%] ml-9 flex'>
