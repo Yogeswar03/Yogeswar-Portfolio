@@ -186,7 +186,7 @@ function Projects() {
         </div>
 
         <div className="w-full flex items-center justify-center -mt-50 md:mt-10 lg:mt-30">
-          <a to='/projects' target="_blank" rel="noopener noreferrer">
+          <a href='/projects' target="_blank" rel="noopener noreferrer">
             <div className="group flex items-center border border-black rounded-full px-3 py-2 bg-white transition-all duration-300 ease-[.255, .61,.355,1] hover:bg-black hover:rounded-full">
               <p className="text-black group-hover:text-white uppercase mr-4 transition-colors duration-300">
                 View All Projects
