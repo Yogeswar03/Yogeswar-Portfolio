@@ -4,7 +4,7 @@ import React from 'react';
 function Landing() {
   return (
     <div data-scroll data-scroll-section data-scroll-speed="-.6" className='w-full h-full z-2 flex flex-col items-start justify-center mt-20'>
-      <div className='text  text-[10vw]  lg:text-[6.3vw] pl-6 sm:pl-10 font-["oswald"] tracking-tighter mt-10 sm:mt-20 md:mt-16 lg:mt-20 mb-10 text-left'>
+      <div className='text  text-[8vw]  lg:text-[6.3vw] pl-6 sm:pl-10 font-["oswald"] tracking-tighter mt-10 sm:mt-20 md:mt-16 lg:mt-20 mb-10 text-left'>
         {["Hello I Am", "Yogeswar", "I develop web apps"].map((item, index) => {
           return (
             <div className='masker overflow-hidden ' key={index}>
