@@ -39,7 +39,7 @@ function HomePage() {
       <Marquee />
       <section id="about" data-scroll-section><About /></section>
       <Video />
-      <section id="projects" data-scroll-section><Projects /></section>
+      <section id="project" data-scroll-section><Projects /></section>
       <section id="skills" data-scroll-section><Skills /></section>
        <section id="contact" data-scroll-section><Collaborate /></section>
       <Footer />
