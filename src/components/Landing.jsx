@@ -14,7 +14,7 @@ function Landing() {
                     initial={{ width: 0 }}
                     animate={{ width: "8vw" }}
                     transition={{ ease: [0.45, 0, 0.55, 1], duration: 1 }}
-                    className=' w-[10vw] h-[8vw] lg:w-[8vw] lg:h-[5.5vw] relative ml-4 -mr-2 mt-2 rounded object-contain'
+                   className=' h-[7vw] lg:w-[8vw] lg:h-[5.5vw] relative ml-4 -mr-3 mt-1 lg:-mr-2 lg:mt-2 rounded object-contain'
                   >
                     <img src="/image.png" alt="yogi" className='w-full h-full ' />
                   </motion.div>
