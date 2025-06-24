@@ -19,7 +19,7 @@ function Landing() {
                     <img src="/image.png" alt="yogi" className='w-full h-full ' />
                   </motion.div>
                 )}
-                <h1 className={`leading-[5.5vw] uppercase tracking-tighter px-4 font-bold ${index === 1 ? "text-[#3A3B5A]" : ""}`}>
+                <h1 className={`leading-[9vw]   lg:leading-[5.5vw] uppercase tracking-tighter px-4 font-bold ${index === 1 ? "text-[#3A3B5A]" : ""}`}>
                   {item}
                 </h1>
               </div>
