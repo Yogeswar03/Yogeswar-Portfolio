@@ -55,7 +55,7 @@ function Projects() {
         <div className='px-5 md:px-20'>
           <div className='cards flex flex-wrap justify-center items-center gap-5 '>
                  
-                        <div className='card-1 w-full sm:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] flex flex-col mt-15 lg:mt-[130px] '>
+                        <div className='card-1 w-full sm:w-[calc(50%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] flex flex-col mt-15 lg:mt-[130px] '>
                           <div className='name flex gap-2 items-center justify-start pb-3 '>
                             <span className='w-3 h-3 rounded-full bg-black'></span>
                             <h1 className='uppercase font-light text-lg md:text-xl'>EduLearn Ai</h1>
@@ -64,7 +64,7 @@ function Projects() {
                           <motion.div 
                             onHoverStart={() => handleHover(0)} 
                             onHoverEnd={() => handleHoverEnd(0)} 
-                            className="w-full h-[35vh] md:h-[43vh] lg:h-[68vh] relative"
+                            className="w-full h-[35vh] md:h-[39vh] lg:h-[68vh] relative"
                             style={{ pointerEvents: window.innerWidth < 640 ? 'none' : 'auto' }}  
                           >
                             <div>                
@@ -78,7 +78,7 @@ function Projects() {
                             </h1>
                             <div className='absolute z-10 p-10 rounded-2xl'>
                               <a href="https://www.github.com/Yogeswar03" target='_blank'>
-                                <img src="/projectImages/edulearn.png" alt="EduLearn Ai" className='rounded-2xl h-[27vh] md:h-[45vh] lg:h-[55vh]  top-1/2 left-1/2 ' />
+                                <img src="/projectImages/edulearn.png" alt="EduLearn Ai" className='rounded-2xl h-[27vh] md:h-[31vh] lg:h-[55vh]  top-1/2 left-1/2 ' />
                               </a>
                             </div>
                           </motion.div>
@@ -89,7 +89,7 @@ function Projects() {
                           </div>
                         </div>
                 
-                        <div className='card-2 w-full sm:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 lg:mt-30 '>
+                        <div className='card-2 w-full sm:w-[calc(50%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 md:mt-15 lg:mt-30 '>
                           <div className='name flex gap-2 items-center justify-start pb-3'>
                             <span className='w-3 h-3 rounded-full bg-black'></span>
                             <h1 className='uppercase font-normal text-lg md:text-xl'>Weather Forecast</h1>
@@ -97,7 +97,7 @@ function Projects() {
                           <motion.div 
                             onHoverStart={() => handleHover(1)} 
                             onHoverEnd={() => handleHoverEnd(1)} 
-                            className="w-full h-[35vh] md:h-[43vh] lg:h-[68vh] relative"
+                            className="w-full h-[35vh] md:h-[39vh] lg:h-[68vh] relative"
                             style={{ pointerEvents: window.innerWidth < 640 ? 'none' : 'auto' }} 
                           >
                             <div>                
@@ -111,7 +111,7 @@ function Projects() {
                             </h1>
                             <div className=' absolute p-10 rounded-xl'>
                               <a href="https://github.com/Yogeswar03/WeatherApp" target='_blank'>
-                              <img src="/projectImages/weather1.png" alt="Discover Chandigarh" className='rounded-2xl h-[27vh] md:h-[45vh] lg:h-[55vh]  top-1/2 left-1/2  object-contain' />
+                              <img src="/projectImages/weather1.png" alt="Discover Chandigarh" className='rounded-2xl h-[27vh] md:h-[31vh] lg:h-[55vh]  top-1/2 left-1/2  object-contain' />
                               </a>
                             </div>
                           </motion.div>
@@ -121,7 +121,7 @@ function Projects() {
                           </div>
                         </div>
                
-                        <div className='card-3 w-full sm:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 lg:mt-20'>
+                        <div className='card-3 w-full sm:w-[calc(50%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 lg:mt-20'>
                                       <div className='name flex gap-2 items-center justify-start pb-3'>
                                         <span className='w-3 h-3 rounded-full bg-black'></span>
                                         <h1 className='uppercase text-lg md:text-xl'>Lane detection</h1>
@@ -129,7 +129,7 @@ function Projects() {
                                       <motion.div 
                                         onHoverStart={() => handleHover(2)} 
                                         onHoverEnd={() => handleHoverEnd(2)} 
-                                        className='w-full h-[35vh] md:h-[43vh] lg:h-[68vh] relative'
+                                        className='w-full h-[35vh] md:h-[39vh] lg:h-[68vh] relative'
                                         style={{ pointerEvents: window.innerWidth < 640 ? 'none' : 'auto' }} 
                                       >
                                        <div>                
@@ -143,7 +143,7 @@ function Projects() {
                                         </h1>
                                         <div className='absolute z-10 w-full p-10 object-contain'>
                                           <a href="https://github.com/Yogeswar03/Precision-Pathways-for-Safer-Driving" target='_blank'>
-                                            <img src="/projectImages/rrld.png" alt="lane detection" className='rounded-xl  h-[27vh] md:h-[45vh] lg:h-[55vh] ' />
+                                            <img src="/projectImages/rrld.png" alt="lane detection" className='rounded-xl  h-[27vh] md:h-[31vh] lg:h-[55vh] ' />
                                           </a>
                                         </div>
                                       </motion.div>
@@ -153,7 +153,7 @@ function Projects() {
                                       </div>
                         </div>
                         
-                        <div className='card-4 w-full sm:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 lg:mt-20'>
+                        <div className='card-4 w-full sm:w-[calc(50%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(49%-10px)] h-[82vh] -mt-70 lg:mt-20'>
                           <div className='name flex gap-2 items-center justify-start pb-3'>
                             <span className='w-3 h-3 rounded-full bg-black'></span>
                             <h1 className='uppercase font-normal text-lg md:text-xl'>discoverchandigarh</h1>
@@ -161,7 +161,7 @@ function Projects() {
                           <motion.div 
                             onHoverStart={() => handleHover(3)} 
                             onHoverEnd={() => handleHoverEnd(3)} 
-                           className="w-full h-[35vh] md:h-[43vh] lg:h-[68vh] relative"
+                           className="w-full h-[35vh] md:h-[39vh] lg:h-[68vh] relative"
                             style={{ pointerEvents: window.innerWidth < 640 ? 'none' : 'auto' }} 
                           >
                             <div className="absolute left-0 top-0 w-full h-full bg-[#5b8e7d] rounded-xl  z-0"></div>
@@ -172,7 +172,7 @@ function Projects() {
                             </h1>
                             <div className='absolute  z-10  w-full p-10 object-contain'>
                               <a href="https://github.com/Yogeswar03/discoverChandigarh" target='_blank'>
-                                <img src="/projectImages/ixc.png" alt="Weather Forecast" className='rounded-xl  h-[27vh] md:h-[45vh] lg:h-[55vh]' />
+                                <img src="/projectImages/ixc.png" alt="Weather Forecast" className='rounded-xl  h-[27vh] md:h-[31vh] lg:h-[55vh]' />
                               </a>
                             </div>
                           </motion.div>
