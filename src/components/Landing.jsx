@@ -36,7 +36,7 @@ function Landing() {
         ))}
 
         <div className='resume flex flex-row sm:flex-row gap-4 sm:gap-3 cursor-pointer items-center justify-center group mt-4 sm:mt-0'>
-          <a href="https://drive.google.com/file/d/10_BSB-4pQyvcJkuushesLnGVzOAmw29N/view?usp=sharing" target='_blank' className='flex flex-row sm:flex-row gap-4 sm:gap-3 cursor-pointer items-center justify-center group mt-4 sm:mt-0'>
+          <a href="https://drive.google.com/file/d/14BB6_cQ8dFLz84E5nSdXOeThkvavBHDF/view?usp=sharing" target='_blank' className='flex flex-row sm:flex-row gap-4 sm:gap-3 cursor-pointer items-center justify-center group mt-4 sm:mt-0'>
           <div className='px-5 py-1.5 rounded-full border border-zinc-500 font-medium group-hover:text-[#3A3B5A] uppercase transition-colors'>
             My Resume
           </div>
