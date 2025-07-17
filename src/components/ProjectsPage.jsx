@@ -131,7 +131,7 @@ function ProjectsPage() {
                       </motion.div>
                                       
                         <div className='flex gap-2 mt-4 items-center justify-start'>
-                            <ButtonWithHoverEffect link="https://www.github.com/Yogeswar03" text="live project" />
+                            <ButtonWithHoverEffect link="https://edu-learn-app.vercel.app/" text="live project" />
                             <ButtonWithHoverEffect link="https://www.github.com/Yogeswar03" text="github" />
                         </div>
                 </div>
