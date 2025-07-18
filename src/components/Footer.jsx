@@ -39,7 +39,7 @@ function Footer() {
             <div className='pt-10 text-base sm:text-lg flex flex-col p-2 font-light capitalize'>
               <p className='pb-2'>P :</p>
               <a href="https://www.linkedin.com/in/yogeswar-reddy" target='_blank'>LinkedIn</a>
-              <a href="https://drive.google.com/file/d/14BB6_cQ8dFLz84E5nSdXOeThkvavBHDF/view?usp=sharing" target='_blank'>Resume</a>
+              <a href="https://drive.google.com/file/d/10gKCPx9AqAVr5AnbDRScSWpDvRaX1YjL/view?usp=sharing" target='_blank'>Resume</a>
               <a href="https://www.github.com/Yogeswar03" target='_blank'>GitHub</a>
               <a href="https://api.whatsapp.com/send/?phone=%2B916305568170&text&type=phone_number&app_absent=0" target='_blank'>WhatsApp</a>
               <a href="https://www.instagram.com/yogeswar_reddy_25" target='_blank'>Instagram</a>
