@@ -1,45 +1,140 @@
-import { motion } from 'motion/react';
 import React from 'react';
+import { motion } from 'motion/react';
+import { Sparkles, Terminal, Code2, Cpu } from 'lucide-react';
 
-function About() {
+export function About() {
+  const highlights = [
+    {
+      icon: Terminal,
+      title: 'Academic Foundation',
+      desc: 'B.Tech in CSE (AIML) at Chandigarh University. Strong foundation in data structures, algorithms, and deep learning.',
+    },
+    {
+      icon: Code2,
+      title: 'Frontend Engineering',
+      desc: 'Deep focus on React, Tailwind CSS, and Framer Motion to build fluid, high-performance web applications.',
+    },
+    {
+      icon: Cpu,
+      title: 'AI & Vision Systems',
+      desc: 'Experience training computer vision models, NLP sentiment classifiers, and autonomous lane detection pipelines.',
+    },
+    {
+      icon: Sparkles,
+      title: 'Craft & Usability',
+      desc: 'Obsessed with tactile micro-interactions, responsive design systems, and thoughtful UX architecture.',
+    },
+  ];
+
   return (
-    <div
-      id='about'
-      data-scroll
-      data-scroll-section
-      data-scroll-speed=".3"
-      className="w-full min-h-screen font-['oswald'] py-20 bg-[#9A8CA4] rounded-t-2xl z-10 relative -mt-[33vh] -mb-[30vh]"
+    <section
+      id="about"
+      className="w-full min-h-screen py-20 sm:py-24 bg-[#9A8CA4] text-zinc-900 rounded-t-3xl rounded-b-3xl relative z-20 -mt-10 shadow-2xl overflow-hidden"
     >
-      <h1 className="font-bold px-6 sm:px-10 text-4xl sm:text-5xl md:text-6xl mb-10">About Me</h1>
-
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 px-6 md:px-12">
-        <div className="md:w-1/2 w-full font-['Neue_Montreal'] text-base sm:text-lg md:text-xl">
-          <ul className="list-disc space-y-4 px-4 sm:px-8">
-            <li>Recent Computer Science graduate from Chandigarh University.</li>
-            <li>Focused on frontend development using React.js, Tailwind CSS, and Framer Motion.</li>
-            <li>Passionate about building responsive, user-friendly interfaces with smooth animations.</li>
-            <li>Dedicated to writing clean, maintainable code and delivering high-quality web experiences.</li>
-          </ul>
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-12 md:px-16">
+        {/* Section Heading */}
+        <div className="overflow-hidden mb-12">
+          <motion.h2
+            initial={{ y: '100%' }}
+            whileInView={{ y: '0%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-['Oswald'] font-bold text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter text-[#1f2421]"
+          >
+            About Me
+          </motion.h2>
         </div>
 
-        <div className="md:w-1/2 w-full flex justify-center md:justify-end lg:mr-30">
-          <div className="h-[60vw] w-[60vw] md:h-[20vw] md:w-[20vw] border border-zinc-600 rounded-xl bg-[#3a3b5a] relative overflow-hidden">
-            <p className="text-3xl sm:text-4xl md:text-5xl text-white mt-25 ml-15 lg:mt-25 lg:ml-7  font-bold tracking-tighter z-0">YOGESWAR</p>
-            <img
-              src="/profile_pic.png"
-              alt="picture"
-              className="absolute  w-full h-auto left-1/2 top-0 translate-x-[-50%] object-contain z-10"
-            />
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Story & Pillars */}
+          <div className="lg:col-span-7 flex flex-col gap-8 font-['Neue_Montreal']">
+            <p className="text-xl sm:text-2xl text-zinc-900 font-light leading-relaxed">
+              I am a Computer Science graduate specializing in AI & Machine Learning with a deep passion for frontend craftsmanship. I bridge the gap between intelligent backend models and sleek, memorable user interfaces.
+            </p>
+
+            {/* Value cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              {highlights.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="p-5 rounded-2xl bg-white/40 backdrop-blur-md border border-white/50 hover:bg-white/60 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#3A3B5A] text-white flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-['Oswald'] font-bold text-lg uppercase tracking-tight text-zinc-900">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-zinc-800 mt-1 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right Column: Signature Portrait Card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-[340px] aspect-[4/5] rounded-3xl bg-[#3A3B5A] relative overflow-hidden shadow-2xl border border-black/10 group"
+            >
+              {/* Giant Background Monogram / Name */}
+              <span className="absolute top-10 left-6 font-['Oswald'] font-black text-6xl sm:text-7xl text-white/20 uppercase tracking-tighter select-none leading-none">
+                YOGESWAR
+              </span>
+
+              {/* Real Photo */}
+              <img
+                src="/profile_pic.png"
+                alt="Yogeswar Reddy"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 z-10"
+                onError={(e) => {
+                  e.currentTarget.src = '/image.png';
+                }}
+              />
+
+              {/* Bottom Subtle Overlay */}
+              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20 flex items-center justify-between">
+                <div>
+                  <p className="font-['Oswald'] uppercase font-bold text-white text-lg tracking-wide">
+                    Yogeswar Reddy
+                  </p>
+                  <p className="text-xs text-zinc-300 font-['Neue_Montreal']">
+                    B.Tech CSE-AIML • 2025
+                  </p>
+                </div>
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              </div>
+            </motion.div>
           </div>
         </div>
-      </div>
 
-      <div className="p-5 sm:pl-20 sm:ml-10 mt-10 pl-15">
-        <h1 className='text-4xl sm:text-6xl md:text-8xl font-bold font-["oswald"] tracking-tighter uppercase p-4'>
-          <span className='text-[#3a3b5a]'>yogeswar</span> reddy.
-        </h1>
+        {/* Massive Signature Bottom Text */}
+        <div className="mt-20 pt-8 border-t border-black/10 overflow-hidden">
+          <motion.h3
+            initial={{ y: '100%', opacity: 0 }}
+            whileInView={{ y: '0%', opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="font-['Oswald'] font-bold text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] uppercase tracking-tighter leading-none"
+          >
+            <span className="text-[#3A3B5A]">YOGESWAR</span> REDDY.
+          </motion.h3>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,6 +1,45 @@
 @import "tailwindcss";
 
+@theme {
+  --font-oswald: "Oswald", sans-serif;
+  --font-montreal: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
 
-body{
-    overflow-x: hidden;
+.font-oswald,
+.font-\[\'oswald\'\],
+.font-\[\"oswald\"\] {
+  font-family: 'Oswald', sans-serif;
+}
+
+.font-montreal,
+.font-\[\'Neue_Montreal\'\],
+.font-\[\"Neue_Montreal\"\] {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A3B5A;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25263a;
 }

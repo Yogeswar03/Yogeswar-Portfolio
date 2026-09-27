@@ -1,165 +1,150 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronDown } from 'lucide-react';
 
-function Skills() {
-    const [show, setShow] = useState([false, false, false, false]);
+const skillsData = [
+  {
+    id: 0,
+    title: 'Web Development',
+    sub: 'Frontend & Full-Stack Core',
+    type: 'Technologies',
+    skills: [
+      'React.js',
+      'Framer Motion',
+      'Tailwind CSS',
+      'HTML5 / CSS3',
+      'JavaScript (ES6+)',
+      'Redux Toolkit',
+      'Node.js',
+      'Next.js',
+      'REST APIs',
+      'MySQL',
+    ],
+  },
+  {
+    id: 1,
+    title: 'Languages',
+    sub: 'Programming & Scripting',
+    type: 'Coding Languages',
+    skills: ['JavaScript', 'Python', 'C++', 'SQL'],
+  },
+  {
+    id: 2,
+    title: 'Tools & Workflow',
+    sub: 'Prototyping & Version Control',
+    type: 'Ecosystem',
+    skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Postman', 'Vercel', 'Canva'],
+  },
+  {
+    id: 3,
+    title: 'Coursework & AI',
+    sub: 'Specialized Knowledge',
+    type: 'Core Concepts',
+    skills: [
+      'Machine Learning',
+      'Deep Learning',
+      'Computer Vision',
+      'Data Structures & Algorithms',
+      'Object Oriented Programming',
+      'Database Management Systems',
+      'Computer Networks',
+    ],
+  },
+];
 
-    const toggleShow = (index) => {
-        const newShowVisibility = [...show];
-        newShowVisibility[index] = !newShowVisibility[index];
-        setShow(newShowVisibility);
-    };
+export function Skills() {
+  const [openIndex, setOpenIndex] = useState(0);
 
-    return (
-        <section id='skills'>
-            <div className='w-full min-h-screen py-15 font-["Neue_Montreal"] overflow-hidden' >
-                <div className='w-full px-5 md:px-20 border-b border-zinc-400 py-10'>
-                    <h1 className='text-5xl font-light tracking-tight text-zinc-800'>My Skills</h1>
+  const toggle = (idx) => {
+    setOpenIndex(openIndex === idx ? -1 : idx);
+  };
+
+  return (
+    <section id="skills" className="w-full py-24 px-6 sm:px-12 md:px-16 max-w-[1400px] mx-auto">
+      {/* Header */}
+      <div className="w-full border-b border-zinc-400 pb-8 mb-8 flex items-baseline justify-between">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="font-['Oswald'] font-bold text-5xl sm:text-6xl md:text-7xl uppercase tracking-tight text-zinc-900"
+        >
+          My Skills
+        </motion.h2>
+
+        <span className="font-mono text-sm text-zinc-500 uppercase tracking-widest hidden sm:inline-block">
+          (Capabilities)
+        </span>
+      </div>
+
+      {/* Accordion List */}
+      <div className="divide-y divide-zinc-300 font-['Neue_Montreal']">
+        {skillsData.map((item, idx) => {
+          const isOpen = openIndex === idx;
+
+          return (
+            <div key={item.id} className="py-6 sm:py-8 transition-colors">
+              <div
+                onClick={() => toggle(idx)}
+                className="w-full flex items-center justify-between cursor-pointer group"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-8">
+                  <span className="font-mono text-xs text-zinc-400 font-bold">
+                    0{idx + 1}
+                  </span>
+                  <h3 className="font-['Oswald'] font-bold text-2xl sm:text-3xl uppercase tracking-tight text-zinc-900 group-hover:text-[#3A3B5A] transition-colors">
+                    {item.title}
+                  </h3>
+                  <span className="text-xs text-zinc-500 hidden md:inline-block">
+                    • {item.sub}
+                  </span>
                 </div>
 
-                <div className='w-full flex py-[10px] flex-col border-zinc-500'>
-                    <div className='w-full flex items-center justify-between py-[10px] px-5 md:px-20'>
-                        <div className='w-[50%] flex items-center'>
-                            <div className='w-[40%] sm:w-auto'>Web Development</div>
-                            <div className='w-auto hidden sm:block'>
-                                <h3 className='text-sm text-[#212121] opacity-0 transition-all duration-200 ease-in-out'>Frontend & Backend Development</h3>
-                            </div>
-                        </div>
-                        <div className='w-[50%] flex items-center justify-between'>
-                            <div className='w-[40%] sm:w-auto'>
-                                <h3 className='text-sm text-[#212121]'>Technologies</h3>
-                            </div>
-                            <div className='w-[10%] sm:w-auto flex items-end justify-end'>
-                                <button onClick={() => toggleShow(0)} className='text-sm uppercase transition-all duration-200 ease-in-out text-[#212121] link-flash cursor-pointer'>
-                                    {show[0] ? 'Hide' : 'Read'}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`w-full flex justify-between sm:flex-col ${show[0] ? 'max-h-[200px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'} transition-all duration-300 ease-in-out overflow-hidden`}>
-                        <div className='w-[20%] sm:w-auto'></div>
-                        <div className='w-[30%] sm:w-auto flex flex-wrap gap-x-[5px] sm:pt-[10px]'></div>
-                        <div className='w-[40%] sm:w-auto'>
-                            <div style={{ opacity: "1", height: "auto" }}>
-                                <div className='flex flex-col gap-10 mb-[30px] flex-wrap px-4'>
-                                    <p className='text-sm tracking-wider text-[#212121] text-right'>
-                                        HTML | CSS | Bootstrap | React | Tailwind CSS | Material UI | <br />
-                                        Redux | Framer Motion | MySQL | NodeJS | NextJS |
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='w-[10%] sm:w-auto'></div>
-                    </div>
+                <div className="flex items-center gap-6">
+                  <span className="font-mono text-xs uppercase tracking-wider text-zinc-500 hidden sm:inline-block">
+                    {item.type}
+                  </span>
+                  <div className="w-10 h-10 rounded-full border border-zinc-300 flex items-center justify-center group-hover:border-zinc-900 transition-colors">
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown className="w-4 h-4 text-zinc-700" />
+                    </motion.div>
+                  </div>
                 </div>
+              </div>
 
-                <div className='w-full flex py-[10px] flex-col border-y border-zinc-500'>
-                    <div className='w-full flex items-center justify-between py-[10px] px-5 md:px-20'>
-                        <div className='w-[50%] flex items-center'>
-                            <div className='w-[40%] sm:w-auto'>Languages</div>
-                            <div className='w-auto hidden sm:block'>
-                                <h3 className='text-sm text-[#212121] opacity-0 transition-all duration-200 ease-in-out'>Programming & Scripting</h3>
-                            </div>
-                        </div>
-                        <div className='w-[50%] flex items-center justify-between'>
-                            <div className='w-[40%] sm:w-auto'>
-                                <h3 className='text-sm text-[#212121]'>Coding Languages</h3>
-                            </div>
-                            <div className='w-[10%] sm:w-auto flex items-end justify-end'>
-                                <button onClick={() => toggleShow(1)} className='text-sm uppercase transition-all duration-200 ease-in-out text-[#212121] link-flash cursor-pointer'>
-                                    {show[1] ? 'Hide' : 'Read'}
-                                </button>
-                            </div>
-                        </div>
+              {/* Expandable Skills Pill Cloud */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-6 sm:pt-8 flex flex-wrap gap-2 sm:gap-2.5 sm:pl-14">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-4 py-2 rounded-full bg-zinc-100 hover:bg-[#3A3B5A] hover:text-white border border-zinc-200 text-xs sm:text-sm font-medium text-zinc-800 transition-colors duration-200 cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
-                    <div className={`w-full flex justify-between sm:flex-col ${show[1] ? 'max-h-[200px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'} transition-all duration-300 ease-in-out overflow-hidden`}>
-                        <div className='w-[20%] sm:w-auto'></div>
-                        <div className='w-[30%] sm:w-auto flex flex-wrap gap-x-[5px] sm:pt-[10px]'></div>
-                        <div className='w-[40%] sm:w-auto'>
-                            <div style={{ opacity: "1", height: "auto" }}>
-                                <div className='flex flex-col gap-10 mb-[30px] flex-wrap px-4'>
-                                    <p className='text-sm tracking-wider text-[#212121] text-right'>
-                                        JavaScript | Python | C++ | SQL
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='w-[10%] sm:w-auto'></div>
-                    </div>
-                </div>
-
-                <div className='w-full flex py-[10px] flex-col border-zinc-500'>
-                    <div className='w-full flex items-center justify-between py-[10px] px-5 md:px-20'>
-                        <div className='w-[50%] flex items-center'>
-                            <div className='w-[40%] sm:w-auto'>Tools</div>
-                            <div className='w-auto hidden sm:block'>
-                                <h3 className='text-sm text-[#212121] opacity-0 transition-all duration-200 ease-in-out'>UI/UX and Prototyping</h3>
-                            </div>
-                        </div>
-                        <div className='w-[50%] flex items-center justify-between'>
-                            <div className='w-[40%] sm:w-auto'>
-                                <h3 className='text-sm text-[#212121]'>Technologies & Tools</h3>
-                            </div>
-                            <div className='w-[10%] sm:w-auto flex items-end justify-end'>
-                                <button onClick={() => toggleShow(2)} className='text-sm uppercase transition-all duration-200 ease-in-out text-[#212121] link-flash cursor-pointer'>
-                                    {show[2] ? 'Hide' : 'Read'}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`w-full flex justify-between sm:flex-col ${show[2] ? 'max-h-[200px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'} transition-all duration-300 ease-in-out overflow-hidden`}>
-                        <div className='w-[20%] sm:w-auto'></div>
-                        <div className='w-[30%] sm:w-auto flex flex-wrap gap-x-[5px] sm:pt-[10px]'></div>
-                        <div className='w-[40%] sm:w-auto'>
-                            <div style={{ opacity: "1", height: "auto" }}>
-                                <div className='flex flex-col gap-10 mb-[30px] flex-wrap px-4'>
-                                    <p className='text-sm tracking-wider text-[#212121] text-right'>
-                                        Git | GitHub | VS Code | Canva
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='w-[10%] sm:w-auto'></div>
-                    </div>
-                </div>
-
-                <div className='w-full flex py-[10px] flex-col border-y border-zinc-500'>
-                    <div className='w-full flex items-center justify-between py-[10px] px-5 md:px-20'>
-                        <div className='w-[50%] flex items-center'>
-                            <div className='w-[40%] sm:w-auto'>Coursework</div>
-                            <div className='w-auto hidden sm:block'>
-                                <h3 className='text-sm text-[#212121] opacity-0 transition-all duration-200 ease-in-out'>Course</h3>
-                            </div>
-                        </div>
-                        <div className='w-[50%] flex items-center justify-between'>
-                            <div className='w-[40%] sm:w-auto'>
-                                <h3 className='text-sm text-[#212121]'>Course</h3>
-                            </div>
-                            <div className='w-[10%] sm:w-auto flex items-end justify-end'>
-                                <button onClick={() => toggleShow(3)} className='text-sm uppercase transition-all duration-200 ease-in-out text-[#212121] link-flash cursor-pointer'>
-                                    {show[3] ? 'Hide' : 'Read'}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`w-full flex justify-between sm:flex-col ${show[3] ? 'max-h-[200px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'} transition-all duration-300 ease-in-out overflow-hidden`}>
-                        <div className='w-[20%] sm:w-auto'></div>
-                        <div className='w-[30%] sm:w-auto flex flex-wrap gap-x-[5px] sm:pt-[10px]'></div>
-                        <div className='w-[40%] sm:w-auto'>
-                            <div style={{ opacity: "1", height: "auto" }}>
-                                <div className='flex flex-col gap-10 mb-[30px] flex-wrap px-4'>
-                                    <p className='text-sm tracking-wider text-[#212121] text-right'>
-                                        Machine Learning | Data Structures & Algorithms | Computer Networks <br /> Deep Learning 
-                                        Database Management System | Object Oriented Programming 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='w-[10%] sm:w-auto'></div>
-                    </div>
-                </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-        </section>
-    );
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
 export default Skills;
