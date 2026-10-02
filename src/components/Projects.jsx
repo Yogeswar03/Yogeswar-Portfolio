@@ -6,7 +6,7 @@ import { projectsData } from '../data/projects';
 import ProjectCard from './ProjectCard';
 
 export function Projects() {
-  const featured = projectsData.filter((p) => p.featured).slice(0, 4);
+  const featured = projectsData.filter((p) => p.featured).slice(0, 6);
 
   return (
     <div className="w-full bg-[#f8f9fa] rounded-t-3xl relative z-20 shadow-[0_-30px_70px_rgba(0,0,0,0.07)] -mt-8">
@@ -24,7 +24,7 @@ export function Projects() {
           </motion.h2>
 
           <span className="font-mono text-sm text-zinc-500 uppercase tracking-widest hidden sm:inline-block">
-            (04 Selected)
+            (06 Selected)
           </span>
         </div>
 
