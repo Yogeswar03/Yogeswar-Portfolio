@@ -96,7 +96,7 @@ export function Collaborate() {
           className="flex flex-wrap items-center justify-center gap-4 mt-2"
         >
           <ActionPill
-            href="https://www.linkedin.com/in/yogeswar-reddy"
+            href="https://www.linkedin.com/in/ccyogeswar-reddy2502"
             label="LinkedIn"
           />
           <ActionPill

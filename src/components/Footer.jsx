@@ -71,7 +71,7 @@ export function Footer() {
                     Presence
                   </span>
                   <a
-                    href="https://www.linkedin.com/in/yogeswar-reddy"
+                    href="https://www.linkedin.com/in/ccyogeswar-reddy2502"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#3A3B5A] transition-colors"
